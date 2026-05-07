@@ -20,69 +20,43 @@
   --border:rgba(255,255,255,.08);
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
   background:var(--bg);
   color:var(--text);
   font-family:'DM Sans',sans-serif;
-  overflow-x:hidden;
 }
-
-/* NAV */
 
 nav{
   position:fixed;
   top:0;
   width:100%;
-  z-index:999;
   display:flex;
   justify-content:space-between;
-  align-items:center;
   padding:1rem 2rem;
   background:rgba(13,13,13,.95);
-  backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
+  z-index:999;
 }
 
 .logo{
   font-family:'Cormorant Garamond',serif;
-  font-size:1.8rem;
   color:var(--gold2);
-  letter-spacing:.15em;
-  text-transform:uppercase;
+  font-size:1.5rem;
 }
 
 .nav-links{
   display:flex;
-  gap:2rem;
+  gap:1.5rem;
   list-style:none;
 }
 
 .nav-links a{
   color:var(--gold2);
   text-decoration:none;
-  font-size:.75rem;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  opacity:.75;
-  transition:.2s;
+  font-size:.7rem;
 }
-
-.nav-links a:hover{
-  opacity:1;
-  color:var(--gold);
-}
-
-/* HERO */
 
 .hero{
   min-height:100vh;
@@ -91,97 +65,34 @@ nav{
   justify-content:center;
   align-items:center;
   text-align:center;
-  padding:7rem 1.5rem 5rem;
-  background:
-    radial-gradient(circle at center,
-    rgba(200,169,110,.08) 0%,
-    transparent 70%);
 }
 
 .hero h1{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(4rem,10vw,7rem);
+  font-size:4rem;
   color:var(--gold2);
-  font-weight:300;
-  letter-spacing:.12em;
-  margin-bottom:1rem;
 }
 
 .hero p{
   color:var(--muted);
-  letter-spacing:.25em;
-  text-transform:uppercase;
-  font-size:.72rem;
-  margin-bottom:2.5rem;
+  margin-top:1rem;
+  letter-spacing:.2em;
 }
-
-.hero-buttons{
-  display:flex;
-  gap:1rem;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-.btn{
-  padding:.9rem 2rem;
-  text-decoration:none;
-  text-transform:uppercase;
-  font-size:.7rem;
-  letter-spacing:.18em;
-  transition:.2s;
-}
-
-.btn-fill{
-  background:var(--gold);
-  color:#000;
-  border:1px solid var(--gold);
-}
-
-.btn-fill:hover{
-  background:var(--gold2);
-}
-
-.btn-outline{
-  border:1px solid rgba(255,255,255,.2);
-  color:var(--text);
-}
-
-.btn-outline:hover{
-  border-color:var(--gold);
-  color:var(--gold);
-}
-
-/* SECTION */
 
 .section{
-  max-width:1350px;
+  max-width:1200px;
   margin:auto;
-  padding:6rem 2rem;
+  padding:5rem 2rem;
 }
 
-.section-label{
-  color:var(--gold);
-  font-size:.65rem;
-  text-transform:uppercase;
-  letter-spacing:.28em;
-  margin-bottom:1rem;
-}
-
-.section-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2.5rem,5vw,4rem);
+.title{
+  font-size:2rem;
   color:var(--gold2);
-  font-weight:300;
-  margin-bottom:3rem;
+  margin-bottom:2rem;
 }
 
 /* PRICING */
-
-.pricing{
-  background:var(--bg2);
-}
-
-.pricing-grid{
+.grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:1.5rem;
@@ -189,168 +100,99 @@ nav{
 
 .card{
   background:var(--card);
+  padding:1.5rem;
   border:1px solid var(--border);
-  padding:1.8rem;
-  transition:.25s;
-}
-
-.card:hover{
-  transform:translateY(-4px);
 }
 
 .card h3{
-  font-family:'Cormorant Garamond',serif;
   color:var(--gold2);
-  font-size:1.5rem;
-  margin-bottom:.5rem;
-}
-
-.card-sub{
-  color:var(--muted);
-  font-size:.65rem;
-  text-transform:uppercase;
-  letter-spacing:.15em;
-  margin-bottom:1.5rem;
+  margin-bottom:1rem;
 }
 
 .row{
   display:flex;
   justify-content:space-between;
-  padding:.5rem 0;
-  border-bottom:1px solid rgba(255,255,255,.04);
-  font-size:.9rem;
+  padding:.4rem 0;
 }
 
 .price{
   color:var(--gold);
 }
 
-.book-btn{
-  display:inline-block;
-  margin-top:1.5rem;
-  padding:.7rem 1.5rem;
-  background:var(--gold);
-  color:#000;
-  text-decoration:none;
-  text-transform:uppercase;
-  font-size:.65rem;
-  letter-spacing:.16em;
+/* FAMILY DISCOUNT BOX */
+.discount-box{
+  margin:3rem 0;
+  padding:2rem;
+  border:1px solid var(--gold);
+  background:rgba(200,169,110,0.08);
+}
+
+.discount-box h2{
+  color:var(--gold2);
+  margin-bottom:1rem;
+}
+
+.discount-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:1rem;
+}
+
+.compare{
+  font-size:.9rem;
+}
+
+.old{
+  text-decoration:line-through;
+  color:#777;
+}
+
+.new{
+  color:var(--gold);
+  font-weight:bold;
 }
 
 /* GALLERY */
-
-.gallery-grid{
+.gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:10px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:8px;
 }
 
-.gallery-grid img{
+.gallery img{
   width:100%;
   height:100%;
   object-fit:cover;
-  display:block;
-  transition:.4s;
   border:1px solid var(--border);
 }
 
-.gallery-grid img:hover{
-  transform:scale(1.02);
-}
-
 /* CONTACT */
-
-.contact{
-  background:var(--bg2);
-}
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1.4fr;
-  gap:4rem;
-}
-
-.contact-info h3{
-  font-family:'Cormorant Garamond',serif;
-  color:var(--gold2);
-  font-size:2rem;
-  margin-bottom:1.5rem;
-}
-
-.contact-info p{
-  margin-bottom:1rem;
-  color:var(--muted);
-}
-
 form{
   display:flex;
   flex-direction:column;
   gap:1rem;
 }
 
-input,
-textarea,
-select{
-  background:#0f0f0f;
-  border:1px solid var(--border);
-  color:var(--text);
+input,textarea,select{
   padding:1rem;
-  font-family:'DM Sans',sans-serif;
-}
-
-textarea{
-  min-height:140px;
-  resize:vertical;
+  background:#111;
+  border:1px solid var(--border);
+  color:white;
 }
 
 button{
+  padding:1rem;
   background:var(--gold);
   border:none;
-  padding:1rem;
-  text-transform:uppercase;
-  letter-spacing:.15em;
+  font-weight:bold;
   cursor:pointer;
-  font-weight:500;
 }
-
-/* FOOTER */
 
 footer{
-  padding:2rem;
   text-align:center;
-  border-top:1px solid var(--border);
+  padding:2rem;
   color:var(--muted);
-  font-size:.75rem;
-}
-
-/* MOBILE */
-
-@media(max-width:850px){
-
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-
-  nav{
-    padding:1rem;
-  }
-
-  .nav-links{
-    gap:1rem;
-  }
-
-}
-
-@media(max-width:520px){
-
-  .nav-links a{
-    font-size:.58rem;
-  }
-
-  .logo{
-    font-size:1.2rem;
-  }
-
+  border-top:1px solid var(--border);
 }
 </style>
 </head>
@@ -359,215 +201,120 @@ footer{
 
 <nav>
   <div class="logo">NY Lenses</div>
-
   <ul class="nav-links">
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#discount">Family Deal</a></li>
     <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <section class="hero">
+  <h1>Family Edition</h1>
+  <p>Family · Portraits · Graduations · Celebrations</p>
+</section>
 
-  <h1>NY Lenses</h1>
+<!-- PRICING -->
+<section id="pricing" class="section">
+  <div class="title">Family Pricing (50% Discount Applied)</div>
 
-  <p>
-    Family · Portraits · Graduations · Celebrations
-  </p>
+  <div class="grid">
 
-  <div class="hero-buttons">
-    <a href="#contact" class="btn btn-fill">
-      Book a Shoot
-    </a>
+    <div class="card">
+      <h3>Portraits</h3>
+      <div class="row"><span>Original</span><span class="old">$40–$70</span></div>
+      <div class="row"><span>Family Price</span><span class="price">$20–$35</span></div>
+    </div>
 
-    <a href="#gallery" class="btn btn-outline">
-      View Portfolio
-    </a>
+    <div class="card">
+      <h3>Graduations</h3>
+      <div class="row"><span>Original</span><span class="old">$60–$120</span></div>
+      <div class="row"><span>Family Price</span><span class="price">$30–$60</span></div>
+    </div>
+
+    <div class="card">
+      <h3>Parties</h3>
+      <div class="row"><span>Original</span><span class="old">$80–$140</span></div>
+      <div class="row"><span>Family Price</span><span class="price">$40–$70</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BIG DISCOUNT SECTION -->
+<section id="discount" class="section">
+
+  <div class="discount-box">
+    <h2>🎉 Family Discount Applied</h2>
+    <p style="color:#aaa;">
+      All family sessions automatically receive ~50% off normal NY Lenses pricing.
+    </p>
+
+    <div class="discount-grid">
+
+      <div class="compare">
+        Portraits:
+        <div class="old">$40–$70</div>
+        ↓
+        <div class="new">$20–$35</div>
+      </div>
+
+      <div class="compare">
+        Graduations:
+        <div class="old">$60–$120</div>
+        ↓
+        <div class="new">$30–$60</div>
+      </div>
+
+      <div class="compare">
+        Events:
+        <div class="old">$80–$140</div>
+        ↓
+        <div class="new">$40–$70</div>
+      </div>
+
+    </div>
   </div>
 
 </section>
 
-<section id="pricing" class="pricing">
+<!-- GALLERY -->
+<section id="gallery" class="section">
+  <div class="title">Gallery</div>
 
-  <div class="section">
+  <div class="gallery">
 
-    <div class="section-label">
-      Investment
-    </div>
-
-    <h2 class="section-title">
-      Family Pricing
-    </h2>
-
-    <div class="pricing-grid">
-
-      <div class="card">
-        <h3>Portraits</h3>
-
-        <div class="card-sub">
-          Family · Couples · Individual
-        </div>
-
-        <div class="row">
-          <span>Individual</span>
-          <span class="price">$20–$35</span>
-        </div>
-
-        <div class="row">
-          <span>Duo</span>
-          <span class="price">$30–$50</span>
-        </div>
-
-        <div class="row">
-          <span>Family / Group</span>
-          <span class="price">$40–$60</span>
-        </div>
-
-        <a href="#contact" class="book-btn">
-          Book Now →
-        </a>
-      </div>
-
-      <div class="card">
-        <h3>Graduations</h3>
-
-        <div class="card-sub">
-          Cap & Gown · Family Sessions
-        </div>
-
-        <div class="row">
-          <span>Session Rate</span>
-          <span class="price">$30–$60</span>
-        </div>
-
-        <div class="row">
-          <span>Family Package</span>
-          <span class="price">$50–$100</span>
-        </div>
-
-        <a href="#contact" class="book-btn">
-          Book Now →
-        </a>
-      </div>
-
-      <div class="card">
-        <h3>Parties & Events</h3>
-
-        <div class="card-sub">
-          Birthdays · Celebrations
-        </div>
-
-        <div class="row">
-          <span>Session Rate</span>
-          <span class="price">$40–$70</span>
-        </div>
-
-        <div class="row">
-          <span>Extended Coverage</span>
-          <span class="price">$60–$100</span>
-        </div>
-
-        <a href="#contact" class="book-btn">
-          Book Now →
-        </a>
-      </div>
-
-    </div>
+    <img src="DSC09236.jpg">
+    <img src="DSC09317.jpg">
+    <img src="DSC09342.jpg">
+    <img src="DSC09356.jpg">
+    <img src="DSC09377.jpg">
+    <img src="DSC09434.jpg">
+    <img src="DSC09449.jpg">
+    <img src="DSC09455.jpg">
+    <img src="DSC09476.jpg">
 
   </div>
-
 </section>
 
-<section id="gallery">
+<!-- CONTACT -->
+<section class="section">
+  <div class="title">Book a Session</div>
 
-  <div class="section">
-
-    <div class="section-label">
-      Portfolio
-    </div>
-
-    <h2 class="section-title">
-      Family Moments
-    </h2>
-
-    <div class="gallery-grid">
-
-      <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=1200&auto=format&fit=crop" alt="Family Photo">
-
-      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Portrait">
-
-      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop" alt="Graduation">
-
-      <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop" alt="Party">
-
-      <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=1200&auto=format&fit=crop" alt="Celebration">
-
-      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop" alt="Family Portrait">
-
-    </div>
-
-  </div>
-
-</section>
-
-<section id="contact" class="contact">
-
-  <div class="section">
-
-    <div class="section-label">
-      Contact
-    </div>
-
-    <h2 class="section-title">
-      Book a Session
-    </h2>
-
-    <div class="contact-grid">
-
-      <div class="contact-info">
-
-        <h3>Get in Touch</h3>
-
-        <p>📱 (214) 283-7683</p>
-
-        <p>✉️ ny.lenses1@gmail.com</p>
-
-        <p>📸 @ny_.lenses</p>
-
-        <p>Garland, TX · DFW Area</p>
-
-      </div>
-
-      <form>
-
-        <input type="text" placeholder="Your Name">
-
-        <input type="email" placeholder="Email Address">
-
-        <input type="tel" placeholder="Phone Number">
-
-        <select>
-          <option>Portrait Session</option>
-          <option>Graduation Session</option>
-          <option>Party / Event</option>
-        </select>
-
-        <textarea placeholder="Tell me about your event..."></textarea>
-
-        <button type="submit">
-          Send Message
-        </button>
-
-      </form>
-
-    </div>
-
-  </div>
-
+  <form>
+    <input placeholder="Name">
+    <input placeholder="Email">
+    <select>
+      <option>Portraits ($20–$35)</option>
+      <option>Graduations ($30–$60)</option>
+      <option>Parties ($40–$70)</option>
+    </select>
+    <textarea placeholder="Message"></textarea>
+    <button type="submit">Send</button>
+  </form>
 </section>
 
 <footer>
-  © 2026 NY Lenses · Garland, TX · Family Photography
+  © 2026 NY Lenses Family Edition · Garland, TX
 </footer>
 
 </body>
